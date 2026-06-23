@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Tentang Actudent — Tim yang peduli pada ekosistem pendidikan dan menciptakan teknologi untuk ketenangan orang tua, kemudahan guru, dan efisiensi sekolah.">
+  <meta name="keywords" content="tentang actudent, visi misi actudent, manajemen sekolah">
+  <meta name="author" content="Actudent">
+
+  <title>Tentang Kami — Actudent</title>
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css?v=3">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Specific styles for about page */
+    .about-hero {
+      padding: calc(var(--section-padding) + 4rem) 0 var(--section-padding);
+      background: var(--bg-soft);
+      text-align: center;
+    }
+    .about-hero__title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .about-hero__subtitle {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--text-body);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .about-empathy {
+      padding: var(--section-padding) 0;
+      background: var(--bg-white);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+    .about-card {
+      background: var(--bg-soft);
+      padding: 3rem 2rem;
+      border-radius: var(--radius-xl);
+      text-align: center;
+      border: 1px solid var(--border-light);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .about-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-medium);
+    }
+    .about-card__icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    .about-card__icon--parents {
+      background: rgba(79, 110, 247, 0.1);
+      color: var(--primary);
+    }
+    .about-card__icon--teachers {
+      background: rgba(0, 184, 148, 0.1);
+      color: var(--accent);
+    }
+    .about-card__icon--school {
+      background: rgba(231, 76, 60, 0.1);
+      color: var(--danger);
+    }
+    .about-card__title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 1rem;
+    }
+    .about-card__desc {
+      color: var(--text-body);
+      line-height: 1.7;
+    }
+    .about-vision {
+      padding: var(--section-padding) 0;
+      background: var(--bg-hero);
+      text-align: center;
+    }
+    .about-vision__inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .about-vision__quote {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <span class="navbar__logo-icon">
+          <i data-lucide="graduation-cap" style="width:20px;height:20px;"></i>
+        </span>
+        Actudent
+      </a>
+
+      <div class="navbar__links" id="nav-links">
+        <a href="index.html#how-it-works" class="navbar__link">Cara Kerja</a>
+        <a href="index.html#solutions" class="navbar__link">Solusi</a>
+        <a href="index.html#features" class="navbar__link">Fitur</a>
+        <a href="index.html#pricing" class="navbar__link">Harga</a>
+        <a href="index.html#security" class="navbar__link">Keamanan</a>
+        <a href="index.html#faq" class="navbar__link">FAQ</a>
+        <a href="https://api.whatsapp.com/send/?phone=6285129634505&text=Halo+Tim+Actudent,+saya+tertarik+untuk+menjadwalkan+Demo+Gratis.%0A%0ABerikut+informasi+singkat+sekolah+kami:%0A-+Nama+Sekolah:%0A-+Nama+PIC:%0A-+Jabatan:%0A-+Kota:%0A%0AMohon+info+jadwal+untuk+berdiskusi+lebih+lanjut.+Terima+kasih." target="_blank" class="btn btn--primary navbar__cta">Jadwalkan Demo</a>
+      </div>
+
+      <div class="navbar__hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="navbar__mobile-menu" id="mobile-menu">
+    <a href="index.html#how-it-works" class="navbar__link">Cara Kerja</a>
+    <a href="index.html#solutions" class="navbar__link">Solusi</a>
+    <a href="index.html#features" class="navbar__link">Fitur</a>
+    <a href="index.html#pricing" class="navbar__link">Harga</a>
+    <a href="index.html#security" class="navbar__link">Keamanan</a>
+    <a href="index.html#faq" class="navbar__link">FAQ</a>
+    <a href="https://api.whatsapp.com/send/?phone=6285129634505&text=Halo+Tim+Actudent,+saya+tertarik+untuk+menjadwalkan+Demo+Gratis.%0A%0ABerikut+informasi+singkat+sekolah+kami:%0A-+Nama+Sekolah:%0A-+Nama+PIC:%0A-+Jabatan:%0A-+Kota:%0A%0AMohon+info+jadwal+untuk+berdiskusi+lebih+lanjut.+Terima+kasih." target="_blank" class="btn btn--primary btn--large">Jadwalkan Demo</a>
+  </div>
+
+
+  <!-- ============================================
+       HERO ABOUT SECTION
+       ============================================ -->
+  <section class="about-hero">
+    <div class="container">
+      <div class="section-label" style="justify-content: center; margin-bottom: 1.5rem;">
+        <i data-lucide="heart" style="width:14px;height:14px;"></i>
+        Cerita Kami
+      </div>
+      <h1 class="about-hero__title">
+        Teknologi yang Lahir dari <span class="gradient-text">Rasa Peduli</span>
+      </h1>
+      <p class="about-hero__subtitle">
+        Actudent bukan sekadar perusahaan pembuat aplikasi. Kami adalah sekelompok individu yang mendengarkan, 
+        memahami, dan ingin menyelesaikan kekhawatiran nyata yang setiap hari dirasakan oleh sekolah dan orang tua murid.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       EMPATHY SECTION
+       ============================================ -->
+  <section class="about-empathy">
+    <div class="container">
+      <div class="section-header reveal" style="text-align: center;">
+        <h2 class="section-title">Mendengar <span class="gradient-text">Kekhawatiran Anda</span></h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Teknologi kami dirancang bukan untuk sekadar terlihat canggih, melainkan untuk memberikan 
+          solusi langsung atas kecemasan para <em>stakeholder</em> pendidikan.
+        </p>
+      </div>
+
+      <div class="about-grid reveal">
+        <!-- Parents -->
+        <div class="about-card">
+          <div class="about-card__icon about-card__icon--parents">
+            <i data-lucide="shield-check" style="width:32px;height:32px;"></i>
+          </div>
+          <h3 class="about-card__title">Untuk Orang Tua</h3>
+          <p class="about-card__desc">
+            Kami memahami bahwa melepaskan anak ke luar rumah dipenuhi dengan rasa cemas. Apakah anak saya sudah sampai? Apakah mereka aman?
+            Actudent mengembalikan <strong>ketenangan pikiran (peace of mind)</strong> Anda melalui visibilitas real-time terhadap kehadiran dan keselamatan anak.
+          </p>
+        </div>
+
+        <!-- Teachers -->
+        <div class="about-card">
+          <div class="about-card__icon about-card__icon--teachers">
+            <i data-lucide="book-open" style="width:32px;height:32px;"></i>
+          </div>
+          <h3 class="about-card__title">Untuk Para Guru</h3>
+          <p class="about-card__desc">
+            Kami melihat banyak guru kelelahan—bukan karena mengajar, tetapi karena tumpukan kertas administratif, rekapitulasi, dan laporan manual. 
+            Actudent merampingkan itu semua secara otomatis, mengembalikan waktu berharga Anda agar dapat <strong>fokus mendidik dan menginspirasi</strong>.
+          </p>
+        </div>
+
+        <!-- Management -->
+        <div class="about-card">
+          <div class="about-card__icon about-card__icon--school">
+            <i data-lucide="building-2" style="width:32px;height:32px;"></i>
+          </div>
+          <h3 class="about-card__title">Untuk Manajemen Sekolah</h3>
+          <p class="about-card__desc">
+            Menjalankan sekolah dengan efisien membutuhkan data, namun sistem digitalisasi seringkali mahal dan rumit. 
+            Melalui inovasi model bisnis kami, sekolah mendapatkan sistem operasional premium <strong>sepenuhnya gratis</strong>, tanpa harus mengorbankan kualitas pendidikan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       VISION SECTION
+       ============================================ -->
+  <section class="about-vision">
+    <div class="container">
+      <div class="about-vision__inner reveal">
+        <div style="color: var(--primary); margin-bottom: 1.5rem;">
+          <i data-lucide="quote" style="width:48px;height:48px; opacity: 0.2;"></i>
+        </div>
+        <p class="about-vision__quote">
+          "Pendidikan adalah ekosistem yang hidup. Visi kami adalah memastikan setiap aliran data di dalam sekolah tidak hanya tersimpan di dalam laci, melainkan menjadi denyut nadi yang mempererat koneksi antara sekolah dan keluarga."
+        </p>
+        <p style="color: var(--text-body); font-size: 1.1rem; line-height: 1.8;">
+          Melalui pendekatan <strong>Student Management Database (SMDB)</strong>, Actudent meletakkan siswa sebagai pusat gravitasi. Semua fitur yang kami bangun didasari oleh satu pertanyaan fundamental: <em>Bagaimana hal ini bisa mendukung perjalanan anak secara lebih transparan dan proaktif?</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA SECTION
+       ============================================ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-section__inner reveal">
+        <h2 class="cta-section__title">
+          Mari Membangun Masa Depan <span class="gradient-text">Pendidikan Bersama</span>
+        </h2>
+        <p class="cta-section__subtitle">
+          Punya pertanyaan lebih lanjut tentang filosofi atau fitur kami? Jangan ragu untuk berdiskusi dengan tim kami.
+        </p>
+        <div class="cta-section__buttons">
+          <a href="https://api.whatsapp.com/send/?phone=6285129634505&text=Halo+Tim+Actudent,+saya+tertarik+untuk+menjadwalkan+Demo+Gratis.%0A%0ABerikut+informasi+singkat+sekolah+kami:%0A-+Nama+Sekolah:%0A-+Nama+PIC:%0A-+Jabatan:%0A-+Kota:%0A%0AMohon+info+jadwal+untuk+berdiskusi+lebih+lanjut.+Terima+kasih." target="_blank" class="btn btn--primary btn--large btn--pulse">
+            <i data-lucide="calendar" style="width:18px;height:18px;"></i>
+            Jadwalkan Demo Gratis
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand -->
+        <div>
+          <a href="index.html" class="navbar__logo">
+            <span class="navbar__logo-icon">
+              <i data-lucide="graduation-cap" style="width:20px;height:20px;"></i>
+            </span>
+            Actudent
+          </a>
+          <p class="footer__brand-desc">
+            Platform manajemen sekolah yang mentransformasi pengarsipan pasif
+            menjadi aliran data real-time untuk ekosistem pendidikan Indonesia.
+          </p>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h4 class="footer__heading">Produk</h4>
+          <a href="index.html#features" class="footer__link">Gate Control</a>
+          <a href="index.html#features" class="footer__link">Smart Attendance</a>
+          <a href="index.html#features" class="footer__link">Digital Permits</a>
+          <a href="index.html#features" class="footer__link">Automated Export</a>
+        </div>
+
+        <!-- Perusahaan -->
+        <div>
+          <h4 class="footer__heading">Perusahaan</h4>
+          <a href="about.html" class="footer__link">Tentang Kami</a>
+          <a href="index.html#pricing" class="footer__link">Skema Harga</a>
+          <a href="index.html#security" class="footer__link">Keamanan</a>
+          <a href="index.html#faq" class="footer__link">FAQ</a>
+        </div>
+
+        <!-- Kontak -->
+        <div>
+          <h4 class="footer__heading">Hubungi Kami</h4>
+          <a href="mailto:hello@actudent.com" class="footer__link">halo@actudent.com</a>
+          <a href="https://api.whatsapp.com/send/?phone=6285129634505&text=Saya+ingin+mendapatkan+informasi+mengenai+Actudent+untuk%3A%0A++++++++++++-+Nama+Sekolah%3A%0A++++++++++++-+Alamat%3A%0A++++++++++++-+Jumlah+Siswa%3A%0A++++++++++++-+Kebutuhan+Khusus%3A%0A++++++++++++Mohon+informasi+lebih+lanjut+mengenai+fitur+dan+harga.+Terima+kasih."
+            class="footer__link" target="_blank">+62 851-2963-4505 (WhatsApp)</a>
+          <a href="https://api.whatsapp.com/send/?phone=6285129634505&text=Halo+Tim+Actudent,+saya+tertarik+untuk+menjadwalkan+Demo+Gratis.%0A%0ABerikut+informasi+singkat+sekolah+kami:%0A-+Nama+Sekolah:%0A-+Nama+PIC:%0A-+Jabatan:%0A-+Kota:%0A%0AMohon+info+jadwal+untuk+berdiskusi+lebih+lanjut.+Terima+kasih." target="_blank" class="footer__link">Jadwalkan Demo</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2026 Actudent. Hak cipta dilindungi undang-undang.</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Instagram">
+            <i data-lucide="camera" style="width:18px;height:18px;"></i>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn">
+            <i data-lucide="briefcase" style="width:18px;height:18px;"></i>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="YouTube">
+            <i data-lucide="play-circle" style="width:18px;height:18px;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
