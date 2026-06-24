@@ -3038,6 +3038,178 @@ h1, h2, h3, h4 {
 .reveal-delay-4 { transition-delay: 0.4s; }
 
 /* ============================================
+   INTEGRATION SECTION
+   ============================================ */
+.integration {
+  padding: var(--section-padding) 0;
+  background: var(--bg-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.integration__network {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin: 0 auto 3rem;
+}
+
+.integration__network-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.integration__path {
+  fill: none;
+  stroke: url(#line-gradient);
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+  animation: dash-move 20s linear infinite;
+}
+
+@keyframes dash-move {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 1000; }
+}
+
+.integration__dot {
+  fill: var(--primary);
+  filter: drop-shadow(0 0 6px var(--primary));
+}
+
+.integration__node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+.integration__node-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--bg-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+  transition: transform var(--transition-fast);
+}
+
+.integration__node:hover .integration__node-icon {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.integration__node-label {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.integration__node--center { top: 50%; left: 50%; }
+.integration__node--tl { top: 25%; left: 25%; }
+.integration__node--bl { top: 75%; left: 25%; }
+.integration__node--tr { top: 25%; left: 75%; }
+.integration__node--br { top: 75%; left: 75%; }
+.integration__node--tc { top: 12.5%; left: 50%; }
+
+.integration__node-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  transform: translate(-50%, -50%);
+  background: var(--primary);
+  border-radius: 50%;
+  animation: integration-pulse 2.5s ease-out infinite;
+  z-index: -1;
+}
+
+@keyframes integration-pulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+}
+
+.integration__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.integration__card {
+  background: var(--bg-white);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.integration__card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-primary);
+}
+
+.integration__card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: transform var(--transition-fast);
+}
+
+.integration__card:hover .integration__card-icon {
+  transform: scale(1.1);
+}
+
+.integration__card-icon--api {
+  background: var(--primary-lighter);
+  color: var(--primary);
+}
+
+.integration__card-icon--sync {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.integration__card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-heading);
+}
+
+.integration__card-desc {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+/* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 1024px) {
@@ -3063,7 +3235,8 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr;
   }
 
-  .security__grid {
+  .security__grid,
+  .integration__grid {
     grid-template-columns: 1fr;
   }
 
@@ -3102,6 +3275,11 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
+  .integration__network {
+    transform: scale(0.7);
+    margin: -1rem auto 1rem;
+  }
+
   .navbar__links {
     display: none;
   }

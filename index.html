@@ -940,6 +940,117 @@
 
 
   <!-- ============================================
+       INTEGRATION SECTION
+       ============================================ -->
+  <section class="integration" id="integration">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">
+          <i data-lucide="blocks" style="width:14px;height:14px;"></i>
+          Integrasi & Fleksibilitas
+        </span>
+        <h2 class="section-title">Terhubung Tanpa <span class="gradient-text">Hambatan</span></h2>
+        <p class="section-subtitle">
+          Actudent dirancang untuk dapat dengan mudah diintegrasikan dengan sistem sekolah yang sudah ada, serta mendukung kemudahan dalam pengelolaan dan ekspor/impor data.
+        </p>
+      </div>
+
+      <div class="integration__network reveal">
+        <!-- Connecting Lines SVG -->
+        <svg class="integration__network-lines" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="rgba(79, 110, 247, 0.2)" />
+              <stop offset="50%" stop-color="rgba(79, 110, 247, 0.8)" />
+              <stop offset="100%" stop-color="rgba(79, 110, 247, 0.2)" />
+            </linearGradient>
+          </defs>
+          
+          <!-- Paths -->
+          <path d="M 150 100 L 300 200" class="integration__path" />
+          <path d="M 150 300 L 300 200" class="integration__path" />
+          <path d="M 450 100 L 300 200" class="integration__path" />
+          <path d="M 450 300 L 300 200" class="integration__path" />
+          <path d="M 300 50 L 300 200" class="integration__path" />
+          
+          <!-- Animated glowing dots on paths -->
+          <circle cx="0" cy="0" r="4" class="integration__dot">
+            <animateMotion dur="3s" repeatCount="indefinite" path="M 150 100 L 300 200" />
+          </circle>
+          <circle cx="0" cy="0" r="4" class="integration__dot">
+            <animateMotion dur="2.5s" repeatCount="indefinite" path="M 150 300 L 300 200" />
+          </circle>
+          <circle cx="0" cy="0" r="4" class="integration__dot">
+            <animateMotion dur="4s" repeatCount="indefinite" path="M 300 200 L 450 100" />
+          </circle>
+          <circle cx="0" cy="0" r="4" class="integration__dot">
+            <animateMotion dur="3.5s" repeatCount="indefinite" path="M 300 200 L 450 300" />
+          </circle>
+          <circle cx="0" cy="0" r="4" class="integration__dot">
+            <animateMotion dur="2s" repeatCount="indefinite" path="M 300 50 L 300 200" />
+          </circle>
+        </svg>
+
+        <!-- Center Node: Actudent -->
+        <div class="integration__node integration__node--center">
+          <div class="integration__node-pulse"></div>
+          <div class="integration__node-icon" style="background: var(--gradient-primary); color: white; width: 64px; height: 64px;">
+            <i data-lucide="graduation-cap" style="width: 32px; height: 32px;"></i>
+          </div>
+          <span class="integration__node-label">Actudent</span>
+        </div>
+
+        <!-- Peripheral Nodes -->
+        <div class="integration__node integration__node--tl">
+          <div class="integration__node-icon"><i data-lucide="database" style="color: #4F6EF7;"></i></div>
+          <span class="integration__node-label">Database Lama</span>
+        </div>
+        <div class="integration__node integration__node--bl">
+          <div class="integration__node-icon"><i data-lucide="server" style="color: #00B894;"></i></div>
+          <span class="integration__node-label">SIAKAD</span>
+        </div>
+        <div class="integration__node integration__node--tr">
+          <div class="integration__node-icon"><i data-lucide="cloud" style="color: #F59E0B;"></i></div>
+          <span class="integration__node-label">Cloud Storage</span>
+        </div>
+        <div class="integration__node integration__node--br">
+          <div class="integration__node-icon"><i data-lucide="mail" style="color: #8B5CF6;"></i></div>
+          <span class="integration__node-label">Mail Server</span>
+        </div>
+        <div class="integration__node integration__node--tc">
+          <div class="integration__node-icon"><i data-lucide="book-open" style="color: #E74C3C;"></i></div>
+          <span class="integration__node-label">Dapodik</span>
+        </div>
+      </div>
+
+      <div class="integration__grid">
+        <!-- Easy Integration -->
+        <div class="integration__card reveal reveal-delay-1">
+          <div class="integration__card-icon integration__card-icon--api">
+            <i data-lucide="plug-zap" style="width:28px;height:28px;"></i>
+          </div>
+          <h3 class="integration__card-title">Integrasi Sistem Existing</h3>
+          <p class="integration__card-desc">
+            Tidak perlu mengganti infrastruktur IT yang sudah berjalan. Actudent dapat terhubung dengan mulus ke sistem informasi akademik atau keuangan sekolah melalui API yang fleksibel.
+          </p>
+        </div>
+
+        <!-- Flexible Data Import/Export -->
+        <div class="integration__card reveal reveal-delay-2">
+          <div class="integration__card-icon integration__card-icon--sync">
+            <i data-lucide="folder-sync" style="width:28px;height:28px;"></i>
+          </div>
+          <h3 class="integration__card-title">Import & Export Fleksibel</h3>
+          <p class="integration__card-desc">
+            Migrasi data siswa dan staf kini lebih mudah. Dukungan penuh untuk import massal (CSV/Excel) dan export data fleksibel untuk keperluan sinkronisasi dapodik maupun backup mandiri.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
        PRICING / HOSTING MODEL SECTION
        ============================================ -->
   <section class="pricing" id="pricing">
