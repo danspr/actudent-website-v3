@@ -90,9 +90,12 @@ function initTabSwitcher() {
 
       // Update active panel
       panels.forEach(panel => {
-        panel.classList.remove('active');
         if (panel.id === target) {
+          panel.classList.remove('active');
+          void panel.offsetWidth; // trigger reflow to reset CSS animations
           panel.classList.add('active');
+        } else {
+          panel.classList.remove('active');
         }
       });
     });
