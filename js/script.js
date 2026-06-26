@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounterAnimation();
   initSmdbAnimation();
   initDemoModal();
+  initTrialModal();
 });
 
 /* ---------- Sticky Navbar ---------- */
@@ -470,3 +471,106 @@ function initDemoModal() {
     });
   });
 }
+
+/* ---------- Trial Modal Logic ---------- */
+function initTrialModal() {
+  const modal = document.getElementById('trial-modal');
+  const overlay = document.getElementById('trial-modal-overlay');
+  const closeBtn = document.getElementById('trial-modal-close');
+  const triggerBtns = [
+    document.getElementById('cta-pricing-community'),
+    document.getElementById('cta-pricing-trial')
+  ];
+  const form = document.getElementById('trial-form');
+  const successMsg = document.getElementById('trial-success-message');
+  const successCloseBtn = document.getElementById('trial-success-close');
+
+  if (!modal || !form) return;
+
+  function openModal() {
+    modal.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Reset to form view
+    form.style.display = 'grid'; // Grid is used for trial-form
+    if (successMsg) successMsg.style.display = 'none';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  triggerBtns.forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    }
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (overlay) overlay.addEventListener('click', closeModal);
+  if (successCloseBtn) successCloseBtn.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      nama: document.getElementById('trial-nama').value,
+      email: document.getElementById('trial-email').value,
+      wa: document.getElementById('trial-wa').value,
+      sekolah: document.getElementById('trial-sekolah').value,
+      jabatan: document.getElementById('trial-jabatan').value,
+      murid: document.getElementById('trial-murid').value
+    };
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i data-lucide="loader" class="spin" style="width:18px;height:18px;animation:spin 1s linear infinite"></i> Mengirim...';
+    submitBtn.disabled = true;
+
+    try {
+      // const response = await fetch('https://api.actudent.com/v1/leads', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   },
+      //   body: JSON.stringify(payload)
+      // });
+
+      const response = { ok: true };
+      if (response.ok) {
+        form.style.display = 'none';
+        if (successMsg) successMsg.style.display = 'flex';
+        form.reset();
+        
+        // Re-initialize icons for the success message
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+      } else {
+        alert('Terjadi kesalahan. Silakan coba lagi nanti.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Gagal terhubung ke server. Pastikan koneksi internet Anda stabil.');
+    } finally {
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
+  });
+}
+

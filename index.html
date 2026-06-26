@@ -1143,8 +1143,7 @@
               </div>
             </div>
 
-            <a href="https://api.whatsapp.com/send/?phone=6285129634505&text=Halo+Tim+Actudent,+saya+tertarik+dengan+Self+Hosting+Community+License.%0A%0ABerikut+informasi+singkat+sekolah+kami:%0A-+Nama+Sekolah:%0A-+Nama+PIC:%0A-+Jabatan:%0A-+Kota:%0A%0AMohon+info+lebih+lanjut.+Terima+kasih."
-              target="_blank" class="btn btn--secondary btn--large pricing__card-cta" id="cta-pricing-community">
+            <a href="#" class="btn btn--secondary btn--large pricing__card-cta" id="cta-pricing-community">
               <i data-lucide="download" style="width:18px;height:18px;"></i>
               Mulai Gratis
             </a>
@@ -1245,8 +1244,7 @@
               </div>
             </div>
 
-            <a href="https://api.whatsapp.com/send/?phone=6285129634505&text=Halo+Tim+Actudent,+saya+tertarik+mencoba+Cloud+Hosting+Free+Trial+30+Hari.%0A%0ABerikut+informasi+singkat+sekolah+kami:%0A-+Nama+Sekolah:%0A-+Nama+PIC:%0A-+Jabatan:%0A-+Kota:%0A%0AMohon+info+untuk+memulai+free+trial.+Terima+kasih."
-              target="_blank" class="btn btn--secondary btn--large pricing__card-cta" id="cta-pricing-trial">
+            <a href="#" class="btn btn--secondary btn--large pricing__card-cta" id="cta-pricing-trial">
               <i data-lucide="play" style="width:18px;height:18px;"></i>
               Mulai Free Trial
             </a>
@@ -1693,6 +1691,71 @@
           Masuk ke Aplikasi Demo
           <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
         </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       TRIAL MODAL SECTION
+       ============================================ -->
+  <div class="modal-overlay" id="trial-modal-overlay"></div>
+  <div class="modal" id="trial-modal">
+    <button class="modal__close" id="trial-modal-close">
+      <i data-lucide="x" style="width:24px;height:24px;"></i>
+    </button>
+
+    <div class="modal__header">
+      <h3 class="modal__title">Mulai Perjalanan Anda</h3>
+      <p class="modal__subtitle">Isi formulir di bawah ini untuk memulai. Tim kami akan segera menghubungi Anda melalui
+        WhatsApp.</p>
+    </div>
+
+    <div class="modal__body">
+      <form id="trial-form" class="trial-form">
+        <div class="form-group">
+          <label for="trial-nama" class="form-label">Nama Lengkap</label>
+          <input type="text" id="trial-nama" class="form-control" required placeholder="Masukkan nama Anda">
+        </div>
+        <div class="form-group">
+          <label for="trial-email" class="form-label">Email</label>
+          <input type="email" id="trial-email" class="form-control" required placeholder="email@sekolah.com">
+        </div>
+        <div class="form-group">
+          <label for="trial-wa" class="form-label">Nomor WhatsApp</label>
+          <input type="tel" id="trial-wa" class="form-control" required placeholder="081234567890">
+        </div>
+        <div class="form-group">
+          <label for="trial-sekolah" class="form-label">Nama Sekolah</label>
+          <input type="text" id="trial-sekolah" class="form-control" required placeholder="SD/SMP/SMA...">
+        </div>
+        <div class="form-group">
+          <label for="trial-jabatan" class="form-label">Jabatan</label>
+          <input type="text" id="trial-jabatan" class="form-control" required placeholder="Kepala Sekolah, Guru, dll.">
+        </div>
+        <div class="form-group">
+          <label for="trial-murid" class="form-label">Jumlah Murid</label>
+          <select id="trial-murid" class="form-control form-select" required>
+            <option value="" disabled selected>Pilih estimasi jumlah murid</option>
+            <option value="Kurang dari 100">Kurang dari 100</option>
+            <option value="100 - 500">100 - 500</option>
+            <option value="500 - 1000">500 - 1000</option>
+            <option value="Lebih dari 1000">Lebih dari 1000</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn--primary btn--large w-100 mt-3 form-submit-btn"
+          style="width: 100%; margin-top: 1rem;">
+          <i data-lucide="send" style="width:18px;height:18px;"></i> Kirim Permintaan
+        </button>
+      </form>
+
+      <div id="trial-success-message" class="trial-success" style="display: none;">
+        <div class="trial-success__icon">
+          <i data-lucide="check-circle" style="width:64px;height:64px;"></i>
+        </div>
+        <h4 class="trial-success__title">Permintaan Berhasil!</h4>
+        <p class="trial-success__desc">Terima kasih atas ketertarikan Anda. Tim Actudent akan segera menghubungi Anda
+          melalui nomor WhatsApp yang terdaftar.</p>
+        <button type="button" class="btn btn--primary" id="trial-success-close">Tutup</button>
       </div>
     </div>
   </div>
