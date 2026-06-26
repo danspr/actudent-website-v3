@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initCounterAnimation();
   initSmdbAnimation();
+  initDemoModal();
 });
 
 /* ---------- Sticky Navbar ---------- */
@@ -251,13 +252,13 @@ function initSmdbAnimation() {
 
   // Lines config: pathId, color, duration (ms), delay offset, isBroken
   const lineConfigs = [
-    { pathId: 'line-nilai',  color: '#4F6EF7', duration: 2800, delay: 0,    broken: false },
-    { pathId: 'line-perpus', color: '#4F6EF7', duration: 2400, delay: 600,  broken: false },
-    { pathId: 'line-hadir',  color: '#4F6EF7', duration: 2200, delay: 1200, broken: false },
-    { pathId: 'line-bus',    color: '#4F6EF7', duration: 2600, delay: 1800, broken: false },
-    { pathId: 'line-lab',    color: '#F59E0B', duration: 3000, delay: 2400, broken: true  },
-    { pathId: 'line-guru',   color: '#4F6EF7', duration: 2500, delay: 3000, broken: false },
-    { pathId: 'line-parent', color: '#00B894', duration: 1800, delay: 500,  broken: false },
+    { pathId: 'line-nilai', color: '#4F6EF7', duration: 2800, delay: 0, broken: false },
+    { pathId: 'line-perpus', color: '#4F6EF7', duration: 2400, delay: 600, broken: false },
+    { pathId: 'line-hadir', color: '#4F6EF7', duration: 2200, delay: 1200, broken: false },
+    { pathId: 'line-bus', color: '#4F6EF7', duration: 2600, delay: 1800, broken: false },
+    { pathId: 'line-lab', color: '#F59E0B', duration: 3000, delay: 2400, broken: true },
+    { pathId: 'line-guru', color: '#4F6EF7', duration: 2500, delay: 3000, broken: false },
+    { pathId: 'line-parent', color: '#00B894', duration: 1800, delay: 500, broken: false },
   ];
 
   // Create dot elements for each line
@@ -394,4 +395,78 @@ function initSmdbAnimation() {
     }, { threshold: 0.1 });
     observer.observe(smdbVisual);
   }
+}
+
+/* ---------- Demo Modal Logic ---------- */
+function initDemoModal() {
+  const modal = document.getElementById('demo-modal');
+  const overlay = document.getElementById('demo-modal-overlay');
+  const closeBtn = document.getElementById('demo-modal-close');
+  const triggerBtn = document.getElementById('cta-hero-demo-mandiri');
+  const triggerBtnFooter = document.getElementById('cta-footer-demo-mandiri');
+  const personaCards = document.querySelectorAll('.persona-card');
+  const credentialBox = document.getElementById('credential-box');
+  const credUsername = document.getElementById('cred-username');
+  const credPassword = document.getElementById('cred-password');
+
+  if (!modal || !triggerBtn || !triggerBtnFooter) return;
+
+  function openModal() {
+    modal.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Reset selection
+    personaCards.forEach(c => c.classList.remove('active'));
+    credentialBox.style.display = 'none';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  triggerBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal();
+  });
+
+  triggerBtnFooter.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal();
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (overlay) overlay.addEventListener('click', closeModal);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  // Persona Selection
+  const credentials = {
+    admin: { user: 'admin@actudent.demo', pass: 'demo123' },
+    teacher: { user: 'guru@actudent.demo', pass: 'demo123' },
+    parent: { user: 'ortu@actudent.demo', pass: 'demo123' }
+  };
+
+  personaCards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Remove active from all
+      personaCards.forEach(c => c.classList.remove('active'));
+      // Add active to clicked
+      card.classList.add('active');
+
+      const persona = card.dataset.persona;
+      if (credentials[persona]) {
+        credUsername.textContent = credentials[persona].user;
+        credPassword.textContent = credentials[persona].pass;
+        credentialBox.style.display = 'block';
+      }
+    });
+  });
 }
