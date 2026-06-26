@@ -1267,7 +1267,7 @@ h1, h2, h3, h4 {
 /* Central student node */
 .smdb-visual__student {
   position: absolute;
-  top: 50%;
+  top: calc(50% + 12px);
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -1320,7 +1320,7 @@ h1, h2, h3, h4 {
 /* Parent App card */
 .smdb-visual__parent-app {
   position: absolute;
-  top: 50%;
+  top: calc(50% + 10px);
   right: 5%;
   transform: translateY(-50%);
   width: 120px;
@@ -1393,8 +1393,8 @@ h1, h2, h3, h4 {
 .smdb-visual__arrival-dot {
   position: absolute;
   top: 50%;
-  right: 22%;
-  transform: translateY(-50%);
+  left: 77.777%;
+  transform: translate(-50%, -50%);
   width: 10px;
   height: 10px;
   border-radius: 50%;

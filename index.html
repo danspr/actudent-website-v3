@@ -361,7 +361,7 @@
           <!-- Main diagram area -->
           <div class="smdb-visual__diagram">
             <!-- SVG Layer for lines and animated dots -->
-            <svg class="smdb-visual__svg" id="smdb-svg" viewBox="0 0 900 500" preserveAspectRatio="xMidYMid meet">
+            <svg class="smdb-visual__svg" id="smdb-svg" viewBox="0 0 900 500" preserveAspectRatio="none">
               <defs>
                 <!-- Animated dot markers -->
                 <radialGradient id="dot-glow-blue" cx="50%" cy="50%" r="50%">
@@ -376,7 +376,7 @@
 
               <!-- Connection lines from entities to student node -->
               <!-- Nilai → Student -->
-              <path id="line-nilai" class="smdb-visual__line" d="M 130 65 C 250 65, 320 210, 430 230" />
+              <path id="line-nilai" class="smdb-visual__line" d="M 130 65 C 250 65, 320 210, 430 215" />
               <!-- Perpustakaan → Student -->
               <path id="line-perpus" class="smdb-visual__line" d="M 145 145 C 260 140, 320 200, 430 225" />
               <!-- Kehadiran → Student -->
@@ -391,41 +391,41 @@
 
               <!-- Student → Parent App -->
               <path id="line-parent" class="smdb-visual__line smdb-visual__line--outgoing"
-                d="M 500 245 C 580 245, 650 245, 700 245" />
+                d="M 500 250 C 580 250, 650 250, 700 250" />
 
               <!-- Animated traveling dots will be added via JS -->
             </svg>
 
             <!-- Entity Nodes (left side) -->
-            <div class="smdb-visual__entity" style="top: 35px; left: 20px;" id="entity-nilai">
+            <div class="smdb-visual__entity" style="top: calc(13% - 24px); left: 2%;" id="entity-nilai">
               <div class="smdb-visual__entity-icon" style="background: #EEF2FF; color: #4F6EF7;">
                 <i data-lucide="file-text" style="width:18px;height:18px;"></i>
               </div>
               <span class="smdb-visual__entity-label">Nilai</span>
             </div>
 
-            <div class="smdb-visual__entity" style="top: 115px; left: 20px;" id="entity-perpus">
+            <div class="smdb-visual__entity" style="top: calc(29% - 24px); left: 2%;" id="entity-perpus">
               <div class="smdb-visual__entity-icon" style="background: #FFF8E1; color: #F59E0B;">
                 <i data-lucide="book-open" style="width:18px;height:18px;"></i>
               </div>
               <span class="smdb-visual__entity-label">Perpustakaan</span>
             </div>
 
-            <div class="smdb-visual__entity" style="top: 195px; left: 20px;" id="entity-hadir">
+            <div class="smdb-visual__entity" style="top: calc(45% - 24px); left: 2%;" id="entity-hadir">
               <div class="smdb-visual__entity-icon" style="background: #E8FFF7; color: #00B894;">
                 <i data-lucide="clipboard-check" style="width:18px;height:18px;"></i>
               </div>
               <span class="smdb-visual__entity-label">Kehadiran</span>
             </div>
 
-            <div class="smdb-visual__entity" style="top: 280px; left: 20px;" id="entity-bus">
+            <div class="smdb-visual__entity" style="top: calc(62% - 24px); left: 2%;" id="entity-bus">
               <div class="smdb-visual__entity-icon" style="background: #EEF2FF; color: #4F6EF7;">
                 <i data-lucide="bus" style="width:18px;height:18px;"></i>
               </div>
               <span class="smdb-visual__entity-label">Rute Bus</span>
             </div>
 
-            <div class="smdb-visual__entity smdb-visual__entity--warning" style="top: 360px; left: 20px;"
+            <div class="smdb-visual__entity smdb-visual__entity--warning" style="top: calc(78% - 24px); left: 2%;"
               id="entity-lab">
               <div class="smdb-visual__entity-icon" style="background: #FFF0EE; color: #E74C3C;">
                 <i data-lucide="flask-conical" style="width:18px;height:18px;"></i>
@@ -436,7 +436,7 @@
               </span>
             </div>
 
-            <div class="smdb-visual__entity" style="top: 435px; left: 20px;" id="entity-guru">
+            <div class="smdb-visual__entity" style="top: calc(93% - 24px); left: 2%;" id="entity-guru">
               <div class="smdb-visual__entity-icon" style="background: #EEF2FF; color: #6C63FF;">
                 <i data-lucide="message-square" style="width:18px;height:18px;"></i>
               </div>
@@ -449,7 +449,7 @@
               <div class="smdb-visual__student-core">
                 <i data-lucide="user" style="width:28px;height:28px;"></i>
               </div>
-              <div class="smdb-visual__student-label">SISWA · CI UTAMA</div>
+              <div class="smdb-visual__student-label">SISWA</div>
             </div>
 
             <!-- Parent App (right side) -->
@@ -464,7 +464,7 @@
               </div>
               <div class="smdb-visual__parent-app-label">
                 <i data-lucide="smartphone" style="width:14px;height:14px;"></i>
-                APLIKASI ORANG TUA
+                ORANG TUA
               </div>
             </div>
 
