@@ -3213,18 +3213,68 @@ h1, h2, h3, h4 {
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 1024px) {
-  .hero__flow-visual {
+  .hero__container {
     flex-direction: column;
-    gap: 0;
+    text-align: center;
   }
 
-  .hero__flow-arrow {
-    transform: rotate(90deg);
-    padding: 0.3rem 0;
+  .hero__content {
+    display: contents;
   }
 
-  .hero__flow-card {
-    width: 280px;
+  .hero__badge {
+    order: 1;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .hero__title {
+    order: 2;
+    margin-bottom: 2rem;
+  }
+
+  .hero__visual {
+    order: 3;
+    margin: 0 auto 2.5rem;
+    zoom: 0.9;
+  }
+
+  .hero__subtitle {
+    order: 4;
+    margin-bottom: 2rem;
+  }
+
+  .hero__cta-group {
+    order: 5;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .hero__trust-badges {
+    order: 6;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .methodology .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .methodology .section-header {
+    order: 1;
+    margin-bottom: 1rem;
+  }
+
+  .smdb-visual {
+    order: 2;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    zoom: 0.8;
+  }
+
+  .methodology__content {
+    order: 3;
   }
 
   .features__grid {
@@ -3303,6 +3353,16 @@ h1, h2, h3, h4 {
     gap: 0.75rem;
   }
 
+  .hero__visual {
+    zoom: 0.8;
+  }
+
+  .hero__notification {
+    right: 10px;
+    bottom: -10px;
+    transform: scale(0.9);
+  }
+
   .solutions__tabs {
     gap: 0.35rem;
   }
@@ -3312,12 +3372,10 @@ h1, h2, h3, h4 {
     font-size: 0.8rem;
   }
 
-  .solutions__tab-text {
-    display: none;
-  }
-
   .solutions__panel-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2.5rem;
   }
 
   .pricing__grid {
@@ -3351,9 +3409,21 @@ h1, h2, h3, h4 {
     gap: 1rem;
     text-align: center;
   }
+
+  .smdb-visual {
+    zoom: 0.6;
+  }
 }
 
 @media (max-width: 480px) {
+  .hero__visual {
+    zoom: 0.68;
+  }
+
+  .smdb-visual {
+    zoom: 0.38;
+  }
+
   .hero__cta-group {
     flex-direction: column;
     width: 100%;
