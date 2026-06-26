@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    image: actudent-website-image
+    container_name: actudent-website
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+    restart: unless-stopped
